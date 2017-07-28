@@ -28,7 +28,7 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
 
 
     <!-- Google Bar Chart -->
-     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
     <script type="text/javascript">
         // Load the Visualization API and the corechart package.
@@ -42,29 +42,28 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
         // Callback that creates and populates a data table,
         // instantiates the pie chart, passes in the data and
         // draws it.
-    function drawChart() {
+        function drawChart() {
 
-        var data = google.visualization.arrayToDataTable([
+            var data = google.visualization.arrayToDataTable([
           ['Skill', 'Percentage'],
-          ['HTML',     11],
-          ['CSS',      10],
-          ['BOOTSTRAP',  6],
-          ['JAVASCRIPT',  6],
+          ['HTML', 11],
+          ['CSS', 10],
+          ['BOOTSTRAP', 6],
+          ['JAVASCRIPT', 6],
           ['JQUERY', 6],
-          ['PHP',    7]
+          ['PHP', 7]
         ]);
 
-        var options = {
-          title: 'My Knowledge Base'
-        };
+            var options = {
+                title: 'My Knowledge Base'
+            };
 
-        var chart = new google.visualization.PieChart(document.getElementById('skillsChart'));
+            var chart = new google.visualization.PieChart(document.getElementById('skillsChart'));
 
-        chart.draw(data, options);
-      }
+            chart.draw(data, options);
+        }
+    </script>
 
-  </script>
-  
 
 
 
@@ -137,10 +136,9 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
   dynamically when this website, index.html, is opened.
   -->
     <script src="js/resumeBuilder.js"></script>
-     
-    
-       <script async defer
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDS1FDZJkJETfsh5rWoBfOkvglB1VmoZDA&libraries=places">
+
+
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDS1FDZJkJETfsh5rWoBfOkvglB1VmoZDA&libraries=places">
     </script>
 
 

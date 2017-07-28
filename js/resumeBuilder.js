@@ -28,22 +28,22 @@ var education = {
             "institution": "Federal Universtiy of Technology",
             "degree": "Information Management Technology",
             "year": "2013-2018",
-            "location":"Lagos",
+            "location": "Lagos",
         }
     ],
     "displayEducation": function () {
-        
-        education.schools.forEach(function(elem,index){
+
+        education.schools.forEach(function (elem, index) {
             $("#education").append(HTMLschoolStart);
-            
+
             var formattedSchoolTitle = HTMLschoolName.replace("%data%", education.schools[index].institution);
-            
+
             var formattedSchoolDegree = HTMLschoolDegree.replace("%data%", education.schools[index].degree);
-            
+
             var formattedSchoolDates = HTMLschoolDates.replace("%data%", education.schools[index].year);
-            
+
             var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", education.schools[index].location);
-            
+
             $(".education-entry:last").append(
                 formattedSchoolTitle,
                 formattedSchoolDegree,
@@ -74,29 +74,29 @@ var work = {
         }
     ],
     "displayWork": function () {
-        
-        work.jobs.forEach(function(elem,index){
-          $("#workExperience").append(HTMLworkStart);
+
+        work.jobs.forEach(function (elem, index) {
+            $("#workExperience").append(HTMLworkStart);
             var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[index].company);
-            
+
             var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[index].position);
-            
+
             var formattedDates = HTMLworkDates.replace("%data%", work.jobs[index].dates);
 
             var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[index].location);
 
             var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[index].description);
 
-            
+
             var formatedWorkEmployerTitle = formattedEmployer + formattedTitle;
-            
-            
+
+
             $(".work-entry:last").append(
                 formatedWorkEmployerTitle,
                 formattedDates,
                 formattedLocation,
                 formattedDescription
-                
+
             );
         });
     }
@@ -110,7 +110,7 @@ var projects = {
             "image": "images/konga.jpg",
             "date": "March 2017"
         },
-       {
+        {
             "name": "PSD to live Website",
             "description": "Ad quem mentitum coniunctione, est e ipsum commodo, qui ad magna singulis se a culpa voluptatibus, nostrud magna fore ne multos a est fabulas se nescius a ea malis graviterque, lorem si quamquam. Aliquip cillum mandaremus. Fabulas eram eiusmod incurreret, litteris aute labore fabulas veniam. Eu consequat ne ingeniis. Esse voluptate arbitror, te laborum nam expetendis, esse appellat hic probant et o enim tempor. Singulis amet magna admodum dolore ad arbitror quem fore litteris labore. Irure ullamco qui senserit, fore nam ubi dolor tempor.",
             "image": "images/psd.jpg",
@@ -118,18 +118,18 @@ var projects = {
         }
     ],
     "displayProject": function () {
-        
-        projects.portfolio.forEach(function(elem,index){
+
+        projects.portfolio.forEach(function (elem, index) {
             $("#projects").append(HTMLprojectStart);
-            
+
             var formattedProjectTitle = HTMLprojectTitle.replace("%data%", projects.portfolio[index].name);
-            
+
             var formattedProjectDates = HTMLprojectDates.replace("%data%", projects.portfolio[index].date);
-            
+
             var formattedProjectDesc = HTMLprojectDescription.replace("%data%", projects.portfolio[index].description);
 
             var formattedProjectImage = HTMLprojectImage.replace("%data%", projects.portfolio[index].image);
-            
+
             $(".project-entry:last").append(
                 formattedProjectTitle,
                 formattedProjectDates,
@@ -206,4 +206,3 @@ projects.displayProject();
 // Programmatically add projects to the page
 education.displayEducation();
 $("#mapDiv").append(googleMap);
-
