@@ -142,12 +142,18 @@ var projects = {
 
 }
 
-
+// Bio info formatting
 var formattedName = HTMLheaderName.replace("%data%", bio.name);
 var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
 var formattedWelcomeMessage = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
 var formattedBioPic = HTMLbioPic.replace("%data%", bio.image);
+var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.phone);
+var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
+var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
+var formattedHomeLocation = HTMLlocation.replace("%data%", bio.contacts.location);
 
+
+// Programmatically add bio info to the page
 $("#header").append(formattedBioPic);
 $("#header").append(formattedWelcomeMessage);
 
@@ -159,16 +165,6 @@ if (bio.skills !== "") {
         formattedSkills += HTMLskills.replace("%data%", bio.skills[skills]);
     }
 }
-
-
-var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.phone);
-var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
-var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
-var formattedHomeLocation = HTMLlocation.replace("%data%", bio.contacts.location);
-
-
-
-
 
 //Name Internalisation           
 var inName = function (name) {
