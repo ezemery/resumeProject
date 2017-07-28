@@ -14,7 +14,7 @@ var bio = {
     "skills": ['HTML', 'CSS', 'JAVASCRIPT', 'JQUERY', 'BOOTSTRAP', 'PHP'],
     "image": "images/eze.png"
 
-}
+};
 
 var education = {
     "schools": [
@@ -54,7 +54,7 @@ var education = {
         });
 
     }
-}
+};
 
 var work = {
     "jobs": [
@@ -100,7 +100,7 @@ var work = {
             );
         });
     }
-}
+};
 var projects = {
 
     "portfolio": [
@@ -140,7 +140,7 @@ var projects = {
 
     }
 
-}
+};
 
 // Bio info formatting
 var formattedName = HTMLheaderName.replace("%data%", bio.name);
@@ -161,7 +161,7 @@ $("#header").append(formattedWelcomeMessage);
 if (bio.skills !== "") {
     $("#header").append(HTMLskillsStart);
     var formattedSkills = "";
-    for (skills in bio.skills) {
+    for (var skills in bio.skills) {
         formattedSkills += HTMLskills.replace("%data%", bio.skills[skills]);
     }
 }
@@ -176,7 +176,7 @@ var inName = function (name) {
     var secondName = splitName[1].toUpperCase();
     var fullName = firstLetter + firstName + " " + secondName;
     return fullName;
-}
+};
 
 // Programmatically add Name to the page
 $("#header").prepend(formattedName, formattedRole);
