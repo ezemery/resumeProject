@@ -161,9 +161,9 @@ $("#header").append(formattedWelcomeMessage);
 if (bio.skills !== "") {
     $("#header").append(HTMLskillsStart);
     var formattedSkills = "";
-    for (var skills in bio.skills) {
-        formattedSkills += HTMLskills.replace("%data%", bio.skills[skills]);
-    }
+    bio.skills.forEach(function(elem,index){
+        formattedSkills += HTMLskills.replace("%data%", bio.skills[index]);
+    });
 }
 
 //Name Internalisation           
