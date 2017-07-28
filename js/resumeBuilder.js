@@ -44,10 +44,12 @@ var education = {
             
             var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", education.schools[index].location);
             
-            $(".education-entry").append(formattedSchoolTitle);
-            $(".education-entry").append(formattedSchoolDegree);
-            $(".education-entry").append(formattedSchoolDates);
-            $(".education-entry").append(formattedSchoolLocation);
+            $(".education-entry:last").append(
+                formattedSchoolTitle,
+                formattedSchoolDegree,
+                formattedSchoolDates,
+                formattedSchoolLocation
+            );
 
         });
 
@@ -128,11 +130,12 @@ var projects = {
 
             var formattedProjectImage = HTMLprojectImage.replace("%data%", projects.portfolio[index].image);
             
-            $(".project-entry").append(formattedProjectTitle);
-            $(".project-entry").append(formattedProjectDates);
-            $(".project-entry").append(formattedProjectDesc);
-            $(".project-entry").append(formattedProjectImage);
-
+            $(".project-entry:last").append(
+                formattedProjectTitle,
+                formattedProjectDates,
+                formattedProjectDesc,
+                formattedProjectImage
+            );
         });
 
     }
