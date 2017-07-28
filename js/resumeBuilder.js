@@ -28,7 +28,7 @@ var education = {
             "institution": "Federal Universtiy of Technology",
             "degree": "Information Management Technology",
             "year": "2013-2018",
-            "location": "Lagos",
+            "location": "Lagos"
         }
     ],
     "displayEducation": function () {
@@ -161,7 +161,7 @@ $("#header").append(formattedWelcomeMessage);
 if (bio.skills !== "") {
     $("#header").append(HTMLskillsStart);
     var formattedSkills = "";
-    bio.skills.forEach(function(elem,index){
+    bio.skills.forEach(function(elem,index) {
         formattedSkills += HTMLskills.replace("%data%", bio.skills[index]);
     });
 }
