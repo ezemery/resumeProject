@@ -109,7 +109,7 @@ var education = {
              education.schools[index].majors.forEach(function(elm,indx) {
                     formattedMajor += HTMLschoolMajor.replace("%data%", education.schools[index].majors[indx]);
                 });
-             $(".education-entry:last").append(formattedMajor)  
+             $(".education-entry:last").append(formattedMajor);  
             }
 
         });
