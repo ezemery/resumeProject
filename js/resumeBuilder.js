@@ -96,16 +96,25 @@ var education = {
             var formattedSchoolDates = HTMLschoolDates.replace("%data%", education.schools[index].dates);
 
             var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", education.schools[index].location);
+            
+            if (education.schools[index].majors !== "") {
+            var formattedMajor = "";
+             education.schools[index].majors.forEach(function(elm,indx) {
+                    formattedMajor += HTMLschoolMajor.replace("%data%", education.schools[index].majors[indx]);
+                });
+            }
 
             $(".education-entry:last").append(
                 formattedSchoolTitle,
                 formattedSchoolDegree,
                 formattedSchoolDates,
+                formattedMajor,
                 formattedSchoolLocation,
                 formattedSchoolUrl
             );
 
         });
+
         $(".education-entry:last").append(HTMLonlineClasses);
         
         education.onlineCourses.forEach(function (elem, index) {
@@ -234,7 +243,7 @@ var inName = function (name) {
 //$("#main").prepend(internationalizeButton);
 
 // Programmatically add bio-data to the page
- bio.display();
+bio.display();
 // Programmatically add Work Experience to the page
 work.display();
 // Programmatically add projects to the page
