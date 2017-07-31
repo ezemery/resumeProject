@@ -98,8 +98,7 @@ var education = {
             var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", education.schools[index].location);
 
             $(".education-entry:last").append(
-                formattedSchoolTitle,
-                formattedSchoolDegree,
+                formattedSchoolTitle + formattedSchoolDegree,
                 formattedSchoolDates,
                 formattedSchoolLocation,
                 formattedSchoolUrl
@@ -188,13 +187,13 @@ var projects = {
         {
             "title": "Konga Track",
             "description": "Ad quem mentitum coniunctione, est e ipsum commodo, qui ad magna singulis se a culpa voluptatibus, nostrud magna fore ne multos a est fabulas se nescius a ea malis graviterque, lorem si quamquam. Aliquip cillum mandaremus. Fabulas eram eiusmod incurreret, litteris aute labore fabulas veniam. Eu consequat ne ingeniis. Esse voluptate arbitror, te laborum nam expetendis, esse appellat hic probant et o enim tempor. Singulis amet magna admodum dolore ad arbitror quem fore litteris labore. Irure ullamco qui senserit, fore nam ubi dolor tempor.",
-            "images": "images/konga.jpg",
+            "images": ["images/konga.jpg","images/survey.jpg"],
             "dates": "March 2017 - May 2017"
         },
         {
             "title": "PSD to live Website",
             "description": "Ad quem mentitum coniunctione, est e ipsum commodo, qui ad magna singulis se a culpa voluptatibus, nostrud magna fore ne multos a est fabulas se nescius a ea malis graviterque, lorem si quamquam. Aliquip cillum mandaremus. Fabulas eram eiusmod incurreret, litteris aute labore fabulas veniam. Eu consequat ne ingeniis. Esse voluptate arbitror, te laborum nam expetendis, esse appellat hic probant et o enim tempor. Singulis amet magna admodum dolore ad arbitror quem fore litteris labore. Irure ullamco qui senserit, fore nam ubi dolor tempor.",
-            "images": "images/psd.jpg",
+            "images": ["images/psd.jpg","images/skyhigh.jpg"],
             "dates": "May 2017 - june 2017"
         }
     ],
@@ -209,7 +208,11 @@ var projects = {
 
             var formattedProjectDesc = HTMLprojectDescription.replace("%data%", projects.projects[index].description);
 
-            var formattedProjectImage = HTMLprojectImage.replace("%data%", projects.projects[index].images);
+            var formattedProjectImage = "";
+            
+            projects.projects[index].images.forEach(function(elm,indx){
+               formattedProjectImage += HTMLprojectImage.replace("%data%", projects.projects[index].images[indx]); 
+            });
 
             $(".project-entry:last").append(
                 formattedProjectTitle,
